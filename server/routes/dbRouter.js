@@ -1,6 +1,7 @@
 const express = require('express');
 const dbController = require('../controllers/dbController');
 const authController = require('../controllers/authController');
+const apiController = require('../controllers/apiController');
 const router = express.Router();
 const path = require('path');
 
@@ -32,7 +33,7 @@ router.post('/addFavorite/:venue_id', dbController.addVenue, dbController.addFav
 })
 
 router.get('/favorites/', authController.isLoggedIn, dbController.getFavorites, (req, res) => {
-    res.status(200).json({ confirmation: 'here are your results'});
+    res.status(200).json({ confirmation: 'here are your results', favorites: res.locals.favorites });
 })
 
 router.get('/favorites/:venue_id', authController.isLoggedIn, dbController.getFavorite, (req, res) => {

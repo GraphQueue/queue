@@ -48,5 +48,32 @@ apiController.yelp = (req, res, next) => {
   });
 }
 
+apiController.fetch = (req, res, next) => {
+  const YELP_API = '0asdq3RZT2Kcg24r5KLnY49GRgND03gI53KjmnXTaFEsPoe8YaSyyhVNciXqh2GGLrV1i7X79sBWjkWw_NhhMeG9GSOOylFrRXxnFSZuLxQvDj-5bOzL1JsZ-UbGXXYx';
+  let yelp = new yelpAPI(YELP_API);
+  let business;
+
+  const { venue_id } = req.params;
+    
+    yelp.query(`businesses/${venue_id}`)
+      .then( data => {
+        console.log("DataQ: ", JSON.parse(data).name);
+
+         business = {
+          id: JSON.parse(data).id,
+          name: JSON.parse(data).name,
+          image: JSON.parse(data).image_url,
+          location: JSON.parse(data).location,
+          phone: JSON.parse(data).phone,
+          price: JSON.parse(data).price,
+          icon: JSON.parse(data).icon
+        }
+        res.locals.business = business;
+        return next();
+      })
+      .catch(err=> console.log(err));
+
+
+}
 
 module.exports = apiController;

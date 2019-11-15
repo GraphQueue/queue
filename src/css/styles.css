@@ -138,3 +138,31 @@ span.brand {
     font-size: 18px;
 }
 
+.wrap {
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.favorite-img, .favorite-info {
+    margin: 0 auto;
+}
+
+.favorite-img {
+    margin-bottom: 10px !important;
+}
+
+.favorite-box {
+    height: 400px;
+    width: 350px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin: 20px;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+.favorite-box:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

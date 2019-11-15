@@ -49,6 +49,7 @@ const App = () => {
         <Route exact path="/" render={(props) => <MainContainer {...props} user={user} />} />
         <Route path="/signup" render={(props) => <SignUpPage {...props} user={user} setUser={setUser} />} />
         <Route path="/login" render={(props) => <LoginPage {...props} user={user} setUser={setUser} />} />
+        <Route path="/favorites" render={(props) => <Favorites {...props} user={user} />} />
       </Switch>
     </Router >
 
