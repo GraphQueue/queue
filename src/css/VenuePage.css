@@ -113,7 +113,7 @@ h2 {
 }
 .favorite:hover {
   color: gold;
-  text-shadow: 1px 1px #ff0000;
+  text-shadow: 1px 1px darkgrey;
   cursor: pointer;
 }
 
