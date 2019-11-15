@@ -7,7 +7,7 @@ const SignUpPage = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
-    
+
     function postToSignup() {
         axios.post(`/dbRouter/signup`, { username, password })
             .then(res => {
@@ -23,7 +23,7 @@ const SignUpPage = (props) => {
     return (
         <div className="container bg1">
             <h1>Sign Up</h1>
-            <form action="/dbRouter/signup" method="POST" className="flex f-col">
+            <form action="/dbRouter/signup" method="POST" className="flex fd-col">
                 username: <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required /><br />
                 password: <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} required /><br />
                 <Button id="signup" variant="dark" onClick={postToSignup}>Sign up</Button>
