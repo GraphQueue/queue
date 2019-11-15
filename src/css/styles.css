@@ -29,8 +29,13 @@
     position: fixed;
     overflow: hidden;
 }
-
-
+/* login and signup buttons */
+.a-btn {
+    transition: transform .5s;
+}
+.a-btn:hover {
+   transform: scale(1.2); 
+}
 
 
 
@@ -73,8 +78,11 @@ span.brand {
     flex-direction: column;
 }
 
-.auth-btn {
+.btn-link  {
     font-size: 20px;
+}
+.auth-btn:hover {
+    transform: scale(1.2);
 }
 .nav-link {
     font-size: 16px;
@@ -138,6 +146,7 @@ span.brand {
     font-size: 18px;
 }
 
+
 .wrap {
   flex-wrap: wrap;
   margin-top: 20px;
@@ -165,4 +174,12 @@ span.brand {
 .favorite-box:hover {
     transform: scale(1.1);
     cursor: pointer;
+
+.search-placeholders::placeholder {
+    font-size: 16px;
+}
+
+.form-control {
+    font-size: 16px;
+
 }

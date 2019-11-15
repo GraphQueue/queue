@@ -4,9 +4,9 @@ import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 const LoginPage = (props) => {
 
-    const [ username, setUsername ] = useState('');
-    const [ password, setPassword ] = useState('');
-    const [ redirect, setRedirect ] = useState(false);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [redirect, setRedirect] = useState(false);
 
 
     // add function POST to /dbRouter/login
@@ -20,16 +20,14 @@ const LoginPage = (props) => {
     }
 
     if (redirect) return <Redirect to='/' />;
-    
+
     return (
-
-        
-
         <div className="container bg1">
-            <form action="/dbRouter/login" method="POST" className="flex f-col">
+            <h1>Log In</h1>
+            <form action="/dbRouter/login" method="POST" className="flex fd-col">
                 username: <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required /><br />
                 password: <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required /><br />
-                <Button id="signup" variant="dark" onClick={postToLogin}>Login</Button>
+                <Button id="signup" variant="dark" onClick={postToLogin} className="a-btn">Login</Button>
                 {/* <input id="signup" type="submit" value="Login" /> */}
             </form>
             <a href="/signup" >

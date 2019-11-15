@@ -3,6 +3,7 @@ import SearchDisplay from '../components/SearchDisplay.jsx';
 import NewMap from '../components/NewMap.jsx'
 import debounce from "lodash.debounce";
 import '../css/CategoryPage.css';
+import Image from 'react-bootstrap/Image'
 
 class CategoryContainer extends Component {
   constructor(props) {
@@ -34,9 +35,9 @@ class CategoryContainer extends Component {
         <button className="list-item" onClick={() => this.props.selectVenue(element.id, element.name, element.url, element.image, element.location, element.phone, element.latitude, element.longitude)}>
           <div className="flex fd-col">
             <div>
-              {element.location.address1} {element.location.address2}<br />
+              {/* {element.location.address1} {element.location.address2}<br /> */}
               <h3>{element.name}</h3>
-              <img src={`${element.image}`} />
+              <Image src={`${element.image}`} thumbnail />
               <div className="list-item-details">
                 {/* // need to grab the unique id provided from the yelp api data search results that are saved in state. need to use it to save into our database */}
                 {/* <button onClick={() => this.props.selectVenue(element.id, element.name, element.url, element.image, element.location, element.phone)}>Select</button> */}	            <br />
@@ -81,8 +82,8 @@ class CategoryContainer extends Component {
       <div>
         <section className="search-bar">
           <img id="logo-pic-category" src="https://image.flaticon.com/icons/png/512/876/876569.png" />
-          <input type="input" id="searchInput" placeholder="Business or Category" onChange={this.props.setSearchInput} />
-          <input type="input" id="location" placeholder="Location" onChange={this.props.setLocation} />
+          <input type="input" id="searchInput" placeholder="Business or Category" onChange={this.props.setSearchInput} className="search-placeholders" />
+          <input type="input" id="location" placeholder="Location" onChange={this.props.setLocation} className="search-placeholders" />
           <input type="button" id="searchButton" onClick={this.props.search} />
         </section>
         {search}
