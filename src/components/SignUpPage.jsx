@@ -26,7 +26,7 @@ const SignUpPage = (props) => {
             <form action="/dbRouter/signup" method="POST" className="flex fd-col">
                 username: <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required /><br />
                 password: <input type="password" name="password" onChange={(e) => setPassword(e.target.value)} required /><br />
-                <Button id="signup" variant="dark" onClick={postToSignup}>Sign up</Button>
+                <Button id="signup" variant="dark" onClick={postToSignup} className="a-btn">Sign up</Button>
             </form>
             <a href="/login">
                 <Button variant="link" className="auth-btn">Login here.</Button>

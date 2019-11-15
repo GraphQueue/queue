@@ -23,10 +23,11 @@ const LoginPage = (props) => {
 
     return (
         <div className="container bg1">
+            <h1>Log In</h1>
             <form action="/dbRouter/login" method="POST" className="flex fd-col">
                 username: <input type="text" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required /><br />
                 password: <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} required /><br />
-                <Button id="signup" variant="dark" onClick={postToLogin}>Login</Button>
+                <Button id="signup" variant="dark" onClick={postToLogin} className="a-btn">Login</Button>
                 {/* <input id="signup" type="submit" value="Login" /> */}
             </form>
             <a href="/signup" >

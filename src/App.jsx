@@ -9,6 +9,7 @@ import './css/styles.css'
 import { Navbar, Nav } from 'react-bootstrap';
 
 
+
 const App = () => {
 
   const [user, setUser] = useState(null);
@@ -34,6 +35,9 @@ const App = () => {
 
       let signoutLink = document.querySelector('.signout');
       signoutLink.innerHTML = 'Signout';
+      signoutLink.style.color = 'red'
+
+
     }
   }
   return (
@@ -62,6 +66,7 @@ const App = () => {
             </Nav.Link>
             <Nav.Link as={Link} to="/" className="nav-link signout" onClick={() => { window.location.reload() }}>
               {/* <span className="username">{user}'s </span>Favorites */}
+
             </Nav.Link>
 
           </Nav>
